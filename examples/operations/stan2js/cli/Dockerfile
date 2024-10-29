@@ -1,16 +1,16 @@
-FROM golang:1.21-alpine3.18 AS build
+FROM golang:1.22-alpine AS build
 
 RUN apk update && apk add git
 
-RUN go install github.com/nats-io/nats-server/v2@v2.10.3
-RUN go install github.com/nats-io/natscli/nats@v0.0.35
+RUN go install github.com/nats-io/nats-server/v2@v2.10.22
+RUN go install github.com/nats-io/natscli/nats@v0.1.5
 RUN go install github.com/nats-io/stan2js/cmd/stan2js@v0.1.0
 
 COPY ./generate-stan-data ./generate-stan-data
 
 RUN cd ./generate-stan-data && go install .
 
-FROM alpine:3.18
+FROM alpine
 
 RUN apk add bash curl
 

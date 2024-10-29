@@ -10,14 +10,14 @@ services:
       retries: 5
 
   nats:
-    image: docker.io/nats:2.10.5
+    image: docker.io/nats:2.10.22
     command:
       - "--debug"
       - "--http_port=8222"
       - "--js"
 
   debezium:
-    image: docker.io/debezium/server:2.4.0.Final
+    image: docker.io/debezium/server:2.7.3.Final
     volumes:
       - ./application.properties:/debezium/conf/application.properties
     depends_on:

@@ -1,6 +1,6 @@
 services:
   nats1:
-    image: docker.io/nats:2.10.4
+    image: docker.io/nats:2.10.22
     command:
       - "--debug"
       - "--name=nats1"
@@ -11,7 +11,7 @@ services:
       - "--js"
 
   nats2:
-    image: docker.io/nats:2.10.4
+    image: docker.io/nats:2.10.22
     command:
       - "--debug"
       - "--name=nats2"
@@ -22,7 +22,7 @@ services:
       - "--js"
 
   nats3:
-    image: docker.io/nats:2.10.4
+    image: docker.io/nats:2.10.22
     command:
       - "--debug"
       - "--name=nats3"
