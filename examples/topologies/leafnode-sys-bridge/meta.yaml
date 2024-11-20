@@ -1,0 +1,9 @@
+title: Leafnode System Account Bridge
+description: |-
+  This examples demonstrates how to create user in a remote, e.g.
+  the hub cluster, and use it within a remote connection in a leaf
+  node bound to the local system account.
+
+  The effect is that this user can then connect to the hub and
+  report on the leaf nodes as if the system account was being
+  used.
