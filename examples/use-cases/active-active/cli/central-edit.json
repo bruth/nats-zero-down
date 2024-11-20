@@ -1,0 +1,35 @@
+{
+  "name": "events-central",
+  "subjects": [
+    "events.central.\u003e"
+  ],
+  "placement": {
+    "cluster": "central"
+  },
+  "retention": "limits",
+  "max_consumers": -1,
+  "max_msgs_per_subject": -1,
+  "max_msgs": -1,
+  "max_bytes": -1,
+  "max_age": 0,
+  "max_msg_size": -1,
+  "storage": "file",
+  "discard": "old",
+  "num_replicas": 1,
+  "duplicate_window": 120000000000,
+  "sealed": false,
+  "deny_delete": false,
+  "deny_purge": false,
+  "allow_rollup_hdrs": true,
+  "allow_direct": true,
+  "sources": [
+    {
+      "name": "events-west",
+      "filter_subject": "events.west.\u003e"
+    },
+    {
+      "name": "events-east",
+      "filter_subject": "events.east.\u003e"
+    }
+  ]
+}
