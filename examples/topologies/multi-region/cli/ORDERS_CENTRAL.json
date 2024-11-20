@@ -1,0 +1,39 @@
+{
+  "name": "ORDERS_CENTRAL",
+  "subjects": [
+    "js.in.orders_central"
+  ],
+  "retention": "limits",
+  "max_consumers": -1,
+  "max_msgs_per_subject": -1,
+  "max_msgs": -1,
+  "max_bytes": -1,
+  "max_age": 0,
+  "max_msg_size": -1,
+  "storage": "file",
+  "discard": "old",
+  "num_replicas": 3,
+  "duplicate_window": 120000000000,
+  "placement": {
+    "cluster": "",
+    "tags": [
+      "region:central"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ORDERS_EAST",
+      "filter_subject": "js.in.orders_east"
+    },
+    {
+      "name": "ORDERS_WEST",
+      "filter_subject": "js.in.orders_west"
+    }
+  ],
+  "sealed": false,
+  "deny_delete": false,
+  "deny_purge": false,
+  "allow_rollup_hdrs": false,
+  "allow_direct": false,
+  "mirror_direct": false
+}
