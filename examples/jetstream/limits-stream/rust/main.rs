@@ -55,7 +55,7 @@ async fn main() -> Result<(), async_nats::Error> {
         .await?
         .await?;
     jetstream
-        .publish("events.mouse_clicked")
+        .publish("events.mouse_clicked", "".into())
         .await?
         .await?;
     jetstream

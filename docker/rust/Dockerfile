@@ -1,4 +1,4 @@
-FROM rust:1.67-slim AS build
+FROM rust:1.80-slim-bullseye AS build
 
 WORKDIR /opt/app
 
