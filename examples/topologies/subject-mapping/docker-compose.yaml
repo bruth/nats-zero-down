@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  app:
+    image: ${IMAGE_TAG}
+    ports:
+      - "14222:4222"
+      - "14223:4223"
