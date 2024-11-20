@@ -1,0 +1,25 @@
+title: Permissions
+description: |-
+  [Permissions][perms] are defined on [users][users] either in a server config
+  file or when using decentralized auth with JWTs.
+
+  The types of permissions that can be set are straightforward:
+
+  - `publish` - The set of subjects that a user can publish messages to
+  - `subscribe` - The set of subjects that a user can subscribe to
+  - `allow_responses` - A special permission type for subscribers who need to respond to clients
+    when using the request-reply pattern
+
+  For `publish` and `subscribe`, they optionally be declared under `allow` or `deny` blocks.
+  If no block or the `allow` block is used this implies everything is _denied_ by default and
+  only subjects listed will be allowed.
+
+  If a `deny` block is used, all subjects are _allowed_ by default, except for those being denied.
+
+  For core NATS pub-sub permissions, defining permissions is straightforward since they map
+  one-to-one with the messages being sent. However, with JetStream, there is an API that the
+  client libraries abstract away. See the [JetStream protocol here][js-protocol].
+
+  [perms]: https://docs.nats.io/running-a-nats-service/configuration/securing_nats/authorization
+  [users]: https://docs.nats.io/running-a-nats-service/configuration/securing_nats/auth_intro#user-configuration-map
+  [js-protocol]: https://docs.nats.io/reference/reference-protocols/nats_api_reference
