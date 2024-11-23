@@ -7,6 +7,11 @@
 # ```
 # nats context save --server=$NATS_URL local
 # ```
+
+
+# Start a nats-server in the background.
+nats-server &
+
 NATS_URL="${NATS_URL:-nats://localhost:4222}"
 
 # Publish a message to the subject 'greet.joe'. Nothing will happen
