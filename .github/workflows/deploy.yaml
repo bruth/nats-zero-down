@@ -50,7 +50,7 @@ jobs:
       - name: Generate recordings
         shell: 'script -q -e -c "bash {0}"'
         run: |
-          nbe generate recording --exit-on-error
+          nbe generate recording --exit-on-error --recreate
 
       - name: Auto-commit generated recordings
         uses: stefanzweifel/git-auto-commit-action@v5
